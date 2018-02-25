@@ -1,3 +1,5 @@
+rm ( list = ls ( all = TRUE ) )
+
 # We have a population of M&Ms
 # The percentage of yellow M&Ms is either 10% or 20%
 # You have been hired as a statistical consultant to decide whether the true percentage of yellow M&Ms is 10%
@@ -59,6 +61,6 @@ H2Likelihood <- dbinom(k, size = n, prob = 0.2)
 
 # Posteriors
 
-H1Posterior <- ( PH1 * H1Prior ) / ( ( PH1 * H1Likelihood ) + ( PH2 * H2Likelihood ) )
+H1Posterior <- ( PH1 * H1Likelihood ) / ( ( PH1 * H1Likelihood ) + ( PH2 * H2Likelihood ) )
 #Since we assigned only 2 Priors, the H2 Posterior is the complement of the H1 Posterior
 H2Posterior <- 1 - H1Posterior
